@@ -324,7 +324,10 @@ showQianduan: function(data) {
    	rets = JSON.parse(ret)
    
 
-    
+   /*
+    考虑这个文件功能是直接返回给后端的,又另开了一个模块处理多个文件运算，
+    返回最终结果,给这里判断就行了.
+   */ 
    var word = nodeJsonWork.onmessage([rets,classifyid])
     word.then((data) => {
     	resolve({err: '0',tip: '成功', data: data})

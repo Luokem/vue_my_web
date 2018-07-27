@@ -94,10 +94,11 @@
 					this.read = false;
 				}
 
-			},
+			},  
 			created() {
 				console.log(11,this.$route.params)
 				var n = Number(this.$route.params.type)
+				//发送接口
 				this.$http.post('/qianduan',{classify: n})
 				.then((res) => {
 					console.log(res)

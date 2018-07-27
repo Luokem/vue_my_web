@@ -2,6 +2,7 @@
 	<div>
 		 <button class="upExcel" @click="upExcel">导入表格</button>
 		 <button class="upExcel" @click="outputExcel">导出表格</button>
+		 <a id="downloadLink" href="" style="display: none;"></a>
          <input id="upload" type="file" ref="upexcel" @change="importfxx($event)"  accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  style="display: none;"/>
          <transition name="fade">
            <div v-if="excelActive">
@@ -95,21 +96,19 @@
 		      }
     	  },
 
-			outputExcel: function() {　//兼容ie10哦！
-			require.ensure([], () => {　　　　　　　　
-			const { export_json_to_excel } = require('../vendor/Export2Excel');　　//引入文件　　　　　　
-			const tHeader = ['用户名', '姓名', '部门', '职位', '邮箱', '充值']; //将对应的属性名转换成中文
-			//	const tHeader = [];
-			　　　　　　　　
-			const filterVal = ['userName', 'realName', 'department', 'position', 'email', 'money'];//table表格中对应的属性名　　　　　 　　　
-			const list = this.sels;　　　　　　　　
-			const data = this.formatJson(filterVal, list);　　　　　　　　
-			export_json_to_excel(tHeader, data, '列表excel');　　　　　　
-			})
+			outputExcel: function() {
+
+			var outFile = document.getElementById('downloadLink')
+
+			var downlink = '/home/workspace/ZhiNenPaiKeXiTongHouTai/www/static/upload/2018-7-21/13480.xlsx'.match(/static\S+.xlsx/g)[0]
+			// var downName = '/home/workspace/ZhiNenPaiKeXiTongHouTai/www/static/upload/2018-7-21/13480.xlsx'.match(/(\w|\d)+.xlsx/g)[0]
+			 // outFile.download = downName + '.xlsx'  // 下载名称
+  			outFile.href = 'http://www.changlujia.com:8360/'+downlink  // 绑定a标签
+  			 outFile.click()  // 模拟点击实现下载
 			 
 
 		}
-	}
+	  }
 	}
 </script>
 
@@ -156,6 +155,10 @@
 
   .fade-enter-active, .fade-leave-active {
     transition: all 1s ease;
+  }
+
+  button {
+  	cursor:  pointer;
   }
 	
 </style>
