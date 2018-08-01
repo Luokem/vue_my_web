@@ -4,7 +4,7 @@
 			<li class="clearfix" v-for="(item , index) in datas" @click="goto(index)">
 				<div class="clearfix">
 					<img :src="item.path||imgurl" alt="">
-				 <h3 :class="{active: nowIndex == index&&active}" @mouseover="mouseover(index)" @mouseout="mouseout(index)"><span>标题:</span>{{item.title}}</h3>
+				 <h3 :class="{active: nowIndex == index}" @mouseover="mouseover(index)" @mouseout="mouseout(index)"><span>标题:</span>{{item.title}}</h3>
 
 				</div>	 
 			   <div class="code" >

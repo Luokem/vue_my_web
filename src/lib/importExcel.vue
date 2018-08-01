@@ -43,9 +43,9 @@
 		},
 		methods: {
 			 upExcel() {
-        this.$refs.upexcel.click()
-      },
-		      importfxx(obj) {
+			        this.$refs.upexcel.click()
+			      },
+			 importfxx(obj) {
 		      let _this = this;
 		      console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxx1");
 		      let inputDOM = this.$refs.upexcel;

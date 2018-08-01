@@ -97,7 +97,7 @@
 				"dashuju":[
 					{
 						label: '大数据',
-						url: '/st-dashuju/type20'
+						url: '/st-dashuju/dashuju/type2'
 					}
 				],
 				"rengongzhineng": [
@@ -124,9 +124,8 @@
 		},
 		methods: {
 			displayNav(param,index) {
-				this.navTitle.map((item) => {
+				 this.navTitle.map((item) => {
 					item.show = false;
-					return this.item = item
 				})
 				param.show  = true
 				// this.active = !this.active

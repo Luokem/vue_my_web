@@ -15,7 +15,6 @@
 				<li v-for="(list , id) in item.Date"><a :href="list.url" title="">{{list.label}}</a></li>
 			</ul>
 		</template>
-		<button type="" @click="he">hello</button>
 		<div class="am-sm" >
 			<div >
 				<a href="javascript:;">发布</a><br>
