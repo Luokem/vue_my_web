@@ -1,6 +1,6 @@
 <template>
 	<div class="marginTop">
-		  温馨提示： 本页面不存在!!
+		  温馨提示： 本页面不存在!
 		<router-link :to="{path: '/'}">
 			<div>
 				返回首页
