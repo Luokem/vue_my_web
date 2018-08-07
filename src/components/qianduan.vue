@@ -65,7 +65,31 @@
 					var h = new Date(t).getHours()
 					var mi = new Date(t).getMinutes()
 
+
+					// var nowDate = (new Date()-new Date(t))/1000/60/60;
+					// var delYear = parseInt(nowDate/24/360)
+					// var delMounte = parseInt(nowDate/24/30)
+					// var delWeek = parseInt(nowDate/24/7);
+					// var delDate = parseInt(nowDate/24);
+					// var delHour = parseInt(nowDate)
+					// var delMinute = parseInt((new Date()-t)/1000/60)
+					// return delYear?(delYear + "年前"):delMounte?(delMounte + "月前"):delWeek?(delWeek + "周前"):delDate? (delDate + "天前"):delHour?(delHour +"时前"):delMinute?(delMinute + "分钟前"): "刚刚"
 					return y + '-' + m  + '-' + d + '   ' +  h+':' + mi
+				},
+				month(m) {
+					var single = [1,3,5,7,8,10,12]
+					var double = [4,6,9,11]
+					if(single.indexOf(m) !==-1) {
+						return 31
+					}else if(double.indexOf(m) !==-1) {
+						return 30
+					}else {
+						return 28
+					}
+
+				},
+				getDelTime(deltime) {
+
 				},
 				mouseover(index) {
 					this.nowIndex = index;
@@ -94,10 +118,11 @@
 					this.read = false;
 				}
 
+
 			},  
 			created() {
 				console.log(11,this.$route.params)
-				var n = Number(this.$route.params.type)
+				var n = this.$route.params.type
 				//发送接口
 				this.$http.post('/qianduan',{classify: n})
 				.then((res) => {
@@ -115,6 +140,7 @@
 </script>
 
 <style type="text/css" media="screen" scoped>
+
    .qianduan {
    	 height:  90em;
    	 overflow: hidden;

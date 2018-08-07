@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import  IndexPage from '@/pages/indexPage.vue'
-import  Zero from '@/components/st-page/zero.vue'
-import StudyPage from '@/pages/st-page.vue'
-import EditPage from '@/pages/editPage.vue'
-import TimeDownEnd from '@/pages/timeDownEnd.vue'
-import Qianduan from '@/components/qianduan.vue'
-import NotFound from '@/pages/NotFound_404'
+// import  IndexPage from '@/pages/indexPage.vue'
+
+
+const  IndexPage = () =>import('@/pages/indexPage.vue')
+const  Zero = () =>import('@/components/st-page/zero.vue')
+const  StudyPage = () =>import('@/pages/st-page.vue')
+const  EditPage = () =>import('@/pages/editPage.vue')
+const  TimeDownEnd = () =>import('@/pages/timeDownEnd.vue')
+const  Qianduan = () =>import('@/components/qianduan.vue')
+const   NotFound = () =>import('@/pages/NotFound_404')
 
 Vue.use(Router)
 
@@ -40,6 +43,10 @@ const router =  new Router({
             }, 
             {
                 path: 'qianduankuangjia/type:type',
+                component: Qianduan
+            }, 
+            {
+                path: 'xiaozongjie/type:type',
                 component: Qianduan
             },
         ]

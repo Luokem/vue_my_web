@@ -82,6 +82,9 @@
 					{
 						label: 'ui框架',
 						url: '/st-html/uikuangjia/type05'
+					},{
+						label: '小总结',
+						url:'/st-html/xiaozongjie/type06'
 					}
 				],
 				"houduan":[
@@ -97,7 +100,7 @@
 				"dashuju":[
 					{
 						label: '大数据',
-						url: '/st-dashuju/dashuju/type2'
+						url: '/st-dashuju/dashuju/type20'
 					}
 				],
 				"rengongzhineng": [

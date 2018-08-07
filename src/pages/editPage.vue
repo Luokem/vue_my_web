@@ -109,6 +109,10 @@
           {
             label: 'ui框架',
             value: '05'
+          }, 
+          {
+            label: '小总结',
+            value: '06'
           }
         ],
         "houduan":[
