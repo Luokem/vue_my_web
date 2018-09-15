@@ -9,7 +9,7 @@ const  StudyPage = () =>import('@/pages/st-page.vue')
 const  EditPage = () =>import('@/pages/editPage.vue')
 const  TimeDownEnd = () =>import('@/pages/timeDownEnd.vue')
 const  Qianduan = () =>import('@/components/qianduan.vue')
-const   NotFound = () =>import('@/pages/NotFound_404')
+const   NotFound = () =>import('@/pages/notFound_404')
 
 Vue.use(Router)
 
