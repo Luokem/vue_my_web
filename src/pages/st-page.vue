@@ -1,11 +1,12 @@
 <template>
-	<div>
+	<div class="clearfix">
+		
 		<div class="leftMenu">
 			<div>
 				<LeftMenu />
 			</div>
 		</div>
-		<div class="main-content">
+		<div class="main-content" v-cloak>
 			<router-view> </router-view>
 		</div>
 		
@@ -13,7 +14,7 @@
 </template>
 <script type="text/javascript">
 	import LeftMenu from '../components/leftMenu.vue'
-    import router from 'vue-router'
+	
 	export default {
 		components: {
 			LeftMenu
@@ -53,6 +54,9 @@
       margin-right:  0em;
 
     }
+    [v-cloak]{
+    display:none;
+      }
   }
 </style>
 

@@ -1,30 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import ChangeActive from './modules/select-change-ative.js'
+import OnScroll from './modules/onscroll.js'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-
-	state:{
-		active: true
-	},
-	mutations:{
-		mChangeActive(state,param) {
-			if(param==0) {
-				state.active = false;
-			}else {
-
-				state.active = true;
-			}
-			
-		}
-	},
-
-	actions: {
-		changeActive(store,param) {
-			
-			store.commit('mChangeActive',param)
-		} 
+	modules: {
+		ChangeActive,OnScroll
 	}
+	
 
 })

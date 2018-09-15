@@ -1,5 +1,5 @@
 <template>
-	<div class="header" >
+	<div class="header" v-cloak >
 		<div class="logo">
 			<img src='../assets/logo.png' > <b>I Love Study</b>
 		</div>
@@ -238,6 +238,10 @@
 			width:  3.5em;
 			height:  3.5em;
 		}
+	}
+
+	[v-cloak] {
+		display: none;
 	}
 
 

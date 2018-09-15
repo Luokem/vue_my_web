@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-
+    <Progress :isOk="isOk" />
     <div class="content" @click="changeActive">
       <router-view/>
     </div>
@@ -13,14 +13,23 @@
 <script>
 import Header from './components/header.vue'
 import Foot from './components/foot.vue'
+import Progress from './lib/pregress.vue'
 export default {
   components: {
-    Header,Foot
+    Header,Foot,Progress
+  },
+  data() {
+    return {
+      isOk: false,
+    }
   },
   methods: {
     changeActive() {
       this.$store.dispatch('changeActive',0)
    }
+  },
+  mounted() {
+    this.isOk = true;
   }
 }
 </script>
@@ -43,6 +52,7 @@ export default {
   body {
     font-size:  1.6em;
     /* height: 100%; */
+    position:  relative;
   }
 
   ul {

@@ -3,6 +3,7 @@
 	<div>
 		<TimeDownEnd />
 		<Clock />
+		
 	</div>
 </template>
 
@@ -15,3 +16,8 @@
 		}
 	}
 </script>
+
+<style>
+
+
+</style>

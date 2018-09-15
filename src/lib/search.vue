@@ -3,7 +3,7 @@
 		<div class="box" >
 			<div >
 				<label v-show="labelShow">搜索</label>
-			<input type="text" name="" v-model="value" @click="clickInput" :class="{inputStyle: active&&$store.state.active}">
+				<input type="text" name="" v-model="value" @click="clickInput" :class="{inputStyle: active&&selectAtive}">
 			</div>
 			
 			<a  href="javascript:void(null);" @click="search">
@@ -31,6 +31,11 @@
 			},
 			search() {
 				this.$emit('onChange',this.value)
+			}
+		},
+		computed: {
+			selectAtive() {
+				return this.$store.getters.select
 			}
 		},
 		watch: {
