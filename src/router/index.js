@@ -14,7 +14,8 @@ const   NotFound = () =>import('@/pages/notFound_404')
 Vue.use(Router)
 
 const router =  new Router({
-	mode:'history',
+  mode:'history',
+  base: '/', // 基础路径
   routes: [
     {
       path: '/',
