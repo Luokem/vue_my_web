@@ -4,7 +4,7 @@
 			<li class="clearfix" v-for="(item , index) in datas" @click="goto(index)" >
 				<div class="clearfix">
 					<div class="imgBox">
-						<img :src="item.path||imgurl" alt="">
+						<img :src="'http://180.76.110.55:8089/'+item.path||imgurl" alt="">
 					</div>
 					
 				 <h3 :class="{active: nowIndex == index}" @mouseover="mouseover(index)" @mouseout="mouseout(index)" ><span>标题:</span><span></span>{{item.title}}</h3>
