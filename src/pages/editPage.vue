@@ -148,16 +148,18 @@
 		},
 		methods: {
 			img2Upload(e) {
-				this.filesdata = e.target.files; // this.filesdata = this.$refs.file.files[0]
+				this.filesdata = e.target.files; 
+        this.filesdata = this.$refs.file.files
 				var windowURL = window.URL || window.webkitURL;
 				this.previewImg = windowURL.createObjectURL(e.target.files[0]);
 
         let param = new FormData(); //创建form对象
         for(let i = 0;i<this.filesdata.length;i++) {
+          console.log(111,this.filesdata)
            param.append('imgUpload', this.filesdata[i])
         }
 
-            // console.log(param.get('imgUpload[0]')); //FormData私有类对象，访问不到，可以通过get判断值是否传进去
+            console.log(param.get('imgUpload')); //FormData私有类对象，访问不到，可以通过get判断值是否传进去
             let config = {
               headers:{'Content-Type':'multipart/form-data'}
             }; //添加请求头

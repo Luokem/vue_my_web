@@ -70,6 +70,7 @@
 					load: false,
 					dataShowed: false,
 					timeId: '',
+					imgIp: 'http://180.76.110.55:8089'
 				}
 			},
 			methods: {
