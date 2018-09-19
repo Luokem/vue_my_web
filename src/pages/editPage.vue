@@ -166,7 +166,7 @@
             this.$http.post(apiUrl.imgUpload,param,config)
               .then(response=>{
                 console.log(response.data);
-                this.path = '/'+ response.data.data[0].path.replace(/(\\)/g, '/')
+                this.path =response.data.data[0].path.replace(/(\\)/g, '/')
              })
               .catch((err) => {
                 console.log(err)
